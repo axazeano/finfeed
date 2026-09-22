@@ -16,8 +16,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#FFFFFF" />
-  <title>Инфляция — FinFeed</title>
-  <meta name="description" content="Скорость, с которой в среднем растут цены на товары и услуги." />
+  <title>Капитализация процентов — FinFeed</title>
+  <meta name="description" content="Начисленные проценты добавляются к сумме вклада, и дальше процент начисляется уже на выросшую сумму." />
   <script>const sitePreference=document.documentElement.getAttribute("data-default-appearance"),userPreference=localStorage.getItem("appearance");function getCSSValue(e){var t=window.getComputedStyle(document.documentElement).getPropertyValue(e);return"rgb("+t.replace(/\s+/g,"")+")"}function setThemeColor(){var e=document.querySelector("meta[name=theme-color]");return document.documentElement.classList.contains("dark")?e.setAttribute("content",getCSSValue("--color-neutral-800")):e.setAttribute("content",getCSSValue("--color-neutral")),!0}(sitePreference==="dark"&&userPreference===null||userPreference==="dark")&&(document.documentElement.classList.add("dark"),setThemeColor()),document.documentElement.getAttribute("data-auto-appearance")==="true"&&(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches&&userPreference!=="light"&&(document.documentElement.classList.add("dark"),setThemeColor()),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e=>{e.matches?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark"),setThemeColor()}));function add_to_top_elem(){var n=document.body,e=document.documentElement;const s=Math.max(n.scrollHeight,n.offsetHeight,e.clientHeight,e.scrollHeight,e.offsetHeight)-150,t=document.getElementById("to-top");if(t==null)return;t.hidden=s<window.innerHeight}window.addEventListener("DOMContentLoaded",e=>{add_to_top_elem(),setThemeColor();var t=document.querySelectorAll("[id^='appearance-switcher']");t.forEach(e=>{e.addEventListener("click",()=>{document.documentElement.classList.toggle("dark"),setThemeColor(),localStorage.setItem("appearance",document.documentElement.classList.contains("dark")?"dark":"light")}),e.addEventListener("contextmenu",e=>{e.preventDefault(),localStorage.removeItem("appearance")})})})</script>
   <link rel="stylesheet" href="../../css/main.bundle.min.5c000b669ad5e938a5457154c71a019f0cf5b6b865f637cc749820798ba6bd16.css" integrity="sha256-XAALZprV6TilRXFUxxoBnwz1trhl9jfMdJggeYumvRY=" />
 
@@ -58,35 +58,20 @@
 <div class="prose dark:prose-invert">
 <header class="page-head">
   <p class="kicker"><a href="../../terms/">Термины</a></p>
-  <h1>Инфляция</h1>
+  <h1>Капитализация процентов</h1>
 </header>
 <section class="term-full">
-  <p class="term-short">Скорость, с которой в среднем растут цены на товары и услуги.</p>
-  <p>Инфляцию измеряют по стоимости условной корзины товаров и услуг, которые покупает типичная семья. Годовая инфляция сравнивает текущий месяц с тем же месяцем год назад, месячная — с предыдущим месяцем, поэтому две эти цифры могут двигаться в разные стороны. Для человека инфляция означает, что на ту же сумму со временем можно купить меньше, а деньги на счёте без процентов постепенно теряют покупательную способность.</p>
-  <p><button type="button" class="known-toggle" data-known-toggle="inflation" hidden>Я знаю этот термин</button></p>
+  <p class="term-short">Начисленные проценты добавляются к сумме вклада, и дальше процент начисляется уже на выросшую сумму.</p>
+  <p>Обычно банк начисляет проценты раз в месяц или в квартал. Если их выплачивают на отдельный счёт, доход считается только с исходной суммы. При капитализации проценты остаются внутри вклада и сами начинают приносить доход — получается сложный процент. Из-за этого итоговая доходность оказывается выше номинальной ставки, и банки часто рекламируют именно её; но разница ощутима лишь на длинных сроках и при высоких ставках.</p>
+  <p><button type="button" class="known-toggle" data-known-toggle="interest-capitalization" hidden>Я знаю этот термин</button></p>
 </section>
 <section>
   <h2>Статьи с этим термином</h2>
   <ol class="briefs">
   <li>
     <time datetime="2026-09-22">22 сентября 2026</time>
-    <a class="brief-title" href="../../c/2026-09-22-3kdy/">Люди снова ждут более быстрого роста цен — и это осложняет снижение ставки</a>
-    <p>Сентябрьский опрос по заказу Банка России показал, что ожидаемый населением рост цен на год вперёд поднялся до 14,2% годовых. Для ЦБ это аргумент не торопиться со смягчением политики.</p>
-  </li>
-  <li>
-    <time datetime="2026-09-21">21 сентября 2026</time>
-    <a class="brief-title" href="../../c/2026-09-21-f130/">Курятина дорожает быстрее других видов мяса: цены догоняют себестоимость</a>
-    <p>В августе килограмм охлаждённых и замороженных кур в рознице стоил 263,6 рубля — на 15,8% дороже, чем год назад. Минсельхоз объясняет подорожание тем, что цены долго держались низкими и теперь подтягиваются к выросшим расходам производителей.</p>
-  </li>
-  <li>
-    <time datetime="2026-09-21">21 сентября 2026</time>
-    <a class="brief-title" href="../../c/2026-09-21-hk18/">Замминистра финансов ждёт золото по $5000 за унцию в течение года</a>
-    <p>Заместитель министра финансов России на полях финансового форума в Москве сказал журналистам, что за год унция золота может подорожать до $5000. Он объяснил это политикой западных центробанков.</p>
-  </li>
-  <li>
-    <time datetime="2026-09-19">19 сентября 2026</time>
-    <a class="brief-title" href="../../c/2026-09-19-3bdy/">Августовская дефляция в 0,08%: почему цены снизились, а годовой счёт вырос</a>
-    <p>Впервые с начала года месячные цены в России не выросли, а снизились — на 0,08%. Помогли овощи и фрукты нового урожая, но в годовом выражении инфляция всё равно ускорилась до 6,33%.</p>
+    <a class="brief-title" href="../../c/2026-09-22-y6ui/">Средние ставки по вкладам в крупнейших банках чуть подросли в сентябре</a>
+    <p>По подсчётам Банка России, средняя максимальная ставка по рублёвым вкладам в десяти банках с самым большим объёмом депозитов населения поднялась с 12,95% в первой декаде сентября до 13,01% во второй.</p>
   </li>
 </ol>
 
