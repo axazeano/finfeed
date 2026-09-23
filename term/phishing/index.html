@@ -16,8 +16,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#FFFFFF" />
-  <title>Банковский вклад — FinFeed</title>
-  <meta name="description" content="Договор, по которому человек отдаёт банку деньги на срок, а банк платит за это оговорённый процент." />
+  <title>Фишинг — FinFeed</title>
+  <meta name="description" content="Обман, при котором человека заманивают на поддельную страницу, чтобы он сам ввёл там данные карты или перевёл деньги." />
   <script>const sitePreference=document.documentElement.getAttribute("data-default-appearance"),userPreference=localStorage.getItem("appearance");function getCSSValue(e){var t=window.getComputedStyle(document.documentElement).getPropertyValue(e);return"rgb("+t.replace(/\s+/g,"")+")"}function setThemeColor(){var e=document.querySelector("meta[name=theme-color]");return document.documentElement.classList.contains("dark")?e.setAttribute("content",getCSSValue("--color-neutral-800")):e.setAttribute("content",getCSSValue("--color-neutral")),!0}(sitePreference==="dark"&&userPreference===null||userPreference==="dark")&&(document.documentElement.classList.add("dark"),setThemeColor()),document.documentElement.getAttribute("data-auto-appearance")==="true"&&(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches&&userPreference!=="light"&&(document.documentElement.classList.add("dark"),setThemeColor()),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e=>{e.matches?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark"),setThemeColor()}));function add_to_top_elem(){var n=document.body,e=document.documentElement;const s=Math.max(n.scrollHeight,n.offsetHeight,e.clientHeight,e.scrollHeight,e.offsetHeight)-150,t=document.getElementById("to-top");if(t==null)return;t.hidden=s<window.innerHeight}window.addEventListener("DOMContentLoaded",e=>{add_to_top_elem(),setThemeColor();var t=document.querySelectorAll("[id^='appearance-switcher']");t.forEach(e=>{e.addEventListener("click",()=>{document.documentElement.classList.toggle("dark"),setThemeColor(),localStorage.setItem("appearance",document.documentElement.classList.contains("dark")?"dark":"light")}),e.addEventListener("contextmenu",e=>{e.preventDefault(),localStorage.removeItem("appearance")})})})</script>
   <link rel="stylesheet" href="../../css/main.bundle.min.5c000b669ad5e938a5457154c71a019f0cf5b6b865f637cc749820798ba6bd16.css" integrity="sha256-XAALZprV6TilRXFUxxoBnwz1trhl9jfMdJggeYumvRY=" />
 
@@ -58,25 +58,20 @@
 <div class="prose dark:prose-invert">
 <header class="page-head">
   <p class="kicker"><a href="../../terms/">Термины</a></p>
-  <h1>Банковский вклад</h1>
+  <h1>Фишинг</h1>
 </header>
 <section class="term-full">
-  <p class="term-short">Договор, по которому человек отдаёт банку деньги на срок, а банк платит за это оговорённый процент.</p>
-  <p>Вклад — это заём, который клиент даёт банку: деньги лежат на счёте определённый срок, а банк начисляет за них процент. Ставка обычно тем выше, чем жёстче условия: длиннее срок, нет права снимать и пополнять, больше сумма. В России вклады граждан застрахованы государством в пределах установленного лимита, поэтому это самый распространённый способ хранить сбережения. Досрочное снятие почти всегда означает потерю накопленных процентов.</p>
-  <p><button type="button" class="known-toggle" data-known-toggle="deposit" hidden>Я знаю этот термин</button></p>
+  <p class="term-short">Обман, при котором человека заманивают на поддельную страницу, чтобы он сам ввёл там данные карты или перевёл деньги.</p>
+  <p>Фишинг — способ мошенничества, при котором жертве присылают сообщение от имени банка, магазина, государственной службы или коммунальной организации со ссылкой на сайт-копию. Внешне страница повторяет настоящую, но введённые на ней данные карты или пароли попадают к злоумышленникам, а платёж уходит на их счёт. С фишингом человек чаще всего сталкивается в виде СМС, писем и сообщений в мессенджерах о долге, штрафе, посылке или выигрыше.</p>
+  <p><button type="button" class="known-toggle" data-known-toggle="phishing" hidden>Я знаю этот термин</button></p>
 </section>
 <section>
   <h2>Статьи с этим термином</h2>
   <ol class="briefs">
   <li>
     <time datetime="2026-09-23">23 сентября 2026</time>
-    <a class="brief-title" href="../../c/2026-09-23-csr4/">ЦБ: нынешнего уровня ставки хватит, чтобы цены снова замедлились</a>
-    <p>Банк России опубликовал резюме обсуждения ключевой ставки. Большинство участников дискуссии сочли, что нынешние условия для заёмщиков и вкладчиков уже достаточно жёсткие, чтобы рост цен возобновил замедление.</p>
-  </li>
-  <li>
-    <time datetime="2026-09-22">22 сентября 2026</time>
-    <a class="brief-title" href="../../c/2026-09-22-y6ui/">Средние ставки по вкладам в крупнейших банках чуть подросли в сентябре</a>
-    <p>По подсчётам Банка России, средняя максимальная ставка по рублёвым вкладам в десяти банках с самым большим объёмом депозитов населения поднялась с 12,95% в первой декаде сентября до 13,01% во второй.</p>
+    <a class="brief-title" href="../../c/2026-09-23-1ham/">Вернувших похищенные деньги обещают убирать из базы мошенников ЦБ</a>
+    <p>Банк России и оператор карт «Мир» в октябре начнут пилот: если человек, на счёт которого пришли украденные деньги, вернёт их жертве, его реквизиты смогут исключить из базы данных о подозрительных операциях.</p>
   </li>
 </ol>
 
