@@ -1,33 +1,9 @@
 // Единственный скрипт сайта. Без него всё читается: карточки раскрыты, термины — ссылки на свои страницы.
-// Здесь: раскрытие терминов на месте, список «этот термин я знаю» в localStorage и подгрузка ленты.
+// Здесь: раскрытие терминов на месте и подгрузка ленты.
 (function () {
   "use strict";
 
-  var KNOWN_KEY = "finfeed:known-terms";
-
-  // Хранилище может быть выключено или переполнено: сайт обязан работать и так
-  function load(key) {
-    try {
-      var value = JSON.parse(window.localStorage.getItem(key) || "[]");
-      return Array.isArray(value) ? value.filter(function (x) { return typeof x === "string"; }) : [];
-    } catch (e) {
-      return [];
-    }
-  }
-  function save(key, list) {
-    try {
-      window.localStorage.setItem(key, JSON.stringify(list));
-    } catch (e) { /* без хранилища состояние живёт до перезагрузки */ }
-  }
-
-  var knownTerms = load(KNOWN_KEY);
   var counter = 0;
-
-  function setMember(list, id, on) {
-    var i = list.indexOf(id);
-    if (on && i === -1) list.push(id);
-    if (!on && i !== -1) list.splice(i, 1);
-  }
 
   // --- Термины ---
   function closeTerm(term) {
@@ -37,33 +13,10 @@
     if (def) def.hidden = true;
   }
 
-  function makePlain(term) {
-    // Знакомый термин — обычный текст без подчёркивания
-    var trigger = term.querySelector(".term-btn, .term-link");
-    var def = term.querySelector(".term-def");
-    if (def) def.hidden = true;
-    if (trigger) trigger.replaceWith(document.createTextNode(trigger.textContent));
-    term.classList.add("is-known");
-  }
-
-  function markKnown(termId) {
-    setMember(knownTerms, termId, true);
-    save(KNOWN_KEY, knownTerms);
-    var nodes = document.querySelectorAll(".term[data-term]");
-    Array.prototype.forEach.call(nodes, function (term) {
-      if (term.getAttribute("data-term") === termId) makePlain(term);
-    });
-  }
-
   function initTerm(term) {
-    var termId = term.getAttribute("data-term");
     var link = term.querySelector(".term-link");
     var def = term.querySelector(".term-def");
     if (!link || !def) return;
-    if (knownTerms.indexOf(termId) !== -1) {
-      makePlain(term);
-      return;
-    }
     counter += 1;
     def.id = "term-def-" + counter;
     var btn = document.createElement("button");
@@ -73,12 +26,6 @@
     btn.setAttribute("aria-expanded", "false");
     btn.setAttribute("aria-controls", def.id);
     link.replaceWith(btn);
-
-    var know = document.createElement("button");
-    know.type = "button";
-    know.className = "term-know";
-    know.textContent = "Я знаю этот термин — не подчёркивать";
-    def.appendChild(know);
 
     btn.addEventListener("click", function () {
       var expand = btn.getAttribute("aria-expanded") !== "true";
@@ -90,24 +37,6 @@
         closeTerm(term);
         btn.focus();
       }
-    });
-    know.addEventListener("click", function () { markKnown(termId); });
-  }
-
-  // --- Страница термина: вернуть или убрать подчёркивание ---
-  function initKnownToggle(button) {
-    var termId = button.getAttribute("data-known-toggle");
-    function paint() {
-      var known = knownTerms.indexOf(termId) !== -1;
-      button.textContent = known ? "Снова подчёркивать этот термин в тексте" : "Я знаю этот термин — не подчёркивать";
-      button.setAttribute("aria-pressed", known ? "true" : "false");
-    }
-    button.hidden = false;
-    paint();
-    button.addEventListener("click", function () {
-      setMember(knownTerms, termId, knownTerms.indexOf(termId) === -1);
-      save(KNOWN_KEY, knownTerms);
-      paint();
     });
   }
 
@@ -195,7 +124,6 @@
   function init() {
     initWithin(document);
     initFeed();
-    Array.prototype.forEach.call(document.querySelectorAll("[data-known-toggle]"), initKnownToggle);
   }
 
   // Скрипт подключён в конце body: разметка уже разобрана
